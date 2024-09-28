@@ -64,5 +64,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="build-flexmark-all" level="project" />
+    <orderEntry type="library" name="ant-contrib-0.6" level="project" />
   </component>
 </module>

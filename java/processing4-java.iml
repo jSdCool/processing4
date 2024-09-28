@@ -198,5 +198,16 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../app/lib/ant.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="build-flexmark-all" level="project" />
+    <orderEntry type="library" name="ant-contrib-0.6" level="project" />
   </component>
 </module>
