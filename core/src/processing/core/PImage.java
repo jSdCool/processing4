@@ -502,7 +502,7 @@ public class PImage implements PConstants, Cloneable {
    */
   public void resize(int w, int h,int interpolationMode) {  // ignore
     //throw new RuntimeException("resize() not implemented for this PImage type");
-    ShimAWT.resizeImage(this, w, h,interpolationMode);
+    ShimAWT.resizeImage(this, w, h, interpolationMode);
   }
 
   /**
@@ -527,7 +527,7 @@ public class PImage implements PConstants, Cloneable {
    * @see PImage#get(int, int, int, int)
    */
   public void resize(int w, int h) {  // ignore
-    resize(w,h,1);
+    resize(w, h, 1);
   }
 
 

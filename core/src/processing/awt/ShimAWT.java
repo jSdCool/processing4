@@ -237,7 +237,7 @@ public class ShimAWT implements PConstants {
   }
 
 
-  static public void resizeImage(PImage img, int w, int h,int interpolationMode) {  // ignore
+  static public void resizeImage(PImage img, int w, int h, int interpolationMode) {  // ignore
     if (w <= 0 && h <= 0) {
       throw new IllegalArgumentException("width or height must be > 0 for resize");
     }
@@ -251,7 +251,8 @@ public class ShimAWT implements PConstants {
     }
 
     BufferedImage bimg =
-      shrinkImage((BufferedImage) img.getNative(), w*img.pixelDensity, h*img.pixelDensity,interpolationMode);
+      shrinkImage((BufferedImage) img.getNative(), w*img.pixelDensity,
+              h*img.pixelDensity, interpolationMode);
 
     PImage temp = new PImageAWT(bimg);
     img.pixelWidth = temp.width;
@@ -314,8 +315,9 @@ public class ShimAWT implements PConstants {
         scratchImage = new BufferedImage(w, h, type);
         g2 = scratchImage.createGraphics();
       }
-      //convert the passed int value of interpolationMode to the object expected by setRenderingHint
-      Object interpolationModeValue = switch(interpolationMode){
+      // convert the passed int value of interpolationMode to the object expected
+      // by setRenderingHint
+      Object interpolationModeValue = switch(interpolationMode) {
         case 0 -> RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR;
         //case 1 is the same as the default
         case 2 -> RenderingHints.VALUE_INTERPOLATION_BICUBIC;
