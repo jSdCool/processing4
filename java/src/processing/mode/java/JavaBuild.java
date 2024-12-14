@@ -737,14 +737,12 @@ public class JavaBuild {
                    new File(resourcesFolder, "en.lproj"));
 
       Settings sketchProperties = new Settings(new File(sketch.getFolder(), "sketch.properties"));
-      String iconPath = sketchProperties.get("icon");//icon.macos
+      String iconPath = sketchProperties.get("icon");  // icon.macos in sketch.properties
       File iconFile;
       if(iconPath == null || iconPath.isEmpty()){
         iconFile = mode.getContentFile("application/application.icns");
-        System.out.println("using default icon");
       }else {
         iconFile = new File(sketch.getFolder(), iconPath);
-        System.out.println("found custom icon: "+iconPath);
       }
       Util.copyFile(iconFile,
                     new File(resourcesFolder, "application.icns"));
@@ -969,16 +967,14 @@ public class JavaBuild {
       File exeFile = new File(destFolder, sketch.getName() + ".exe");
       config.addChild("outfile").setContent(exeFile.getAbsolutePath());
 
-      //check sketch.properties to see if an icon was set
+      // check sketch.properties to see if an icon was set
       Settings sketchProperties = new Settings(new File(sketch.getFolder(), "sketch.properties"));
-      String iconPath = sketchProperties.get("icon");//icon.windows
+      String iconPath = sketchProperties.get("icon");// icon.windows in sketch.properties
       File iconFile;
       if(iconPath == null || iconPath.isEmpty()){
         iconFile = mode.getContentFile("application/application.ico");
-        System.out.println("using default icon");
       }else {
         iconFile = new File(sketch.getFolder(), iconPath);
-        System.out.println("found custom icon: "+iconPath);
       }
       config.addChild("icon").setContent(iconFile.getAbsolutePath());
 

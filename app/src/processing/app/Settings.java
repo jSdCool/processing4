@@ -100,8 +100,10 @@ public class Settings {
         // this is a key specific to a particular platform
         String actualKey = key.substring(0, key.length() - platformExtLength);
         String value = get(key);
-        //if the key is specific to this platform and is not the last property then attempting to append it to the map will throw a ConcurrentModificationException
-        //to avoid this we append it to a temporary map that can then be safely merged after the loop is complete
+        // if the key is specific to this platform and is not the last property
+        // then attempting to append it to the map will throw a ConcurrentModificationException
+        // to avoid this we append it to a temporary map that can then be safely
+        // merged after the loop is complete
         tmpMap.put(actualKey, value);
       }
     }
